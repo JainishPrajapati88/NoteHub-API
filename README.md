@@ -1,6 +1,6 @@
 # NoteHub
 
-NoteHub is a self-hosted note-taking API powered by a Spring Boot API. This API allows users to manage their notes in their individual environments, providing privacy and control over their data.
+NoteHub is a self-hosted note-taking API powered by a Spring Boot (A Java Spring Framework). This API allows users to manage their notes in their individual environments, providing privacy and control over their data.
 
 ## Requirements
 
