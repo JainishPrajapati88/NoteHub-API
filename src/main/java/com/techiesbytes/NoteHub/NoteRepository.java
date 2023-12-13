@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface NoteRepository extends JpaRepository<NoteEntity,Long> {
-    List<NoteEntity> findByHeading(String heading);
+
+
+    public NoteEntity findByHeading(String heading);
 }

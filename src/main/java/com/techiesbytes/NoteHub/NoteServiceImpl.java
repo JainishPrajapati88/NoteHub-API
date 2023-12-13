@@ -9,23 +9,25 @@ public class NoteServiceImpl implements NoteService{
 
     @Autowired
     NoteRepository NoteRepo;
+
+
     @Override
     public NoteEntity AddNote(NoteEntity note) {
         return NoteRepo.save(note);
     }
 
     @Override
-    public Iterable<NoteEntity> PrintNotes() {
+    public List<NoteEntity> PrintNotes() {
         return NoteRepo.findAll();
     }
 
     @Override
     public String deleteNote(String heading) {
-        List<NoteEntity> NoteToDelete = NoteRepo.findByHeading(heading);
+        NoteEntity NoteToDelete = NoteRepo.findByHeading(heading);
 
-        if(!NoteToDelete.isEmpty())
+        if(NoteToDelete != null)
         {
-            NoteRepo.deleteAll(NoteToDelete);
+            NoteRepo.delete(NoteToDelete);
             return NoteToDelete+" deleted";
         }
         else{
@@ -36,20 +38,26 @@ public class NoteServiceImpl implements NoteService{
     @Override
     public String UpdateNote(String heading, String headToUpdate, String descriptionToUpdate) {
 
-        List<NoteEntity> NoteToUpdate = NoteRepo.findByHeading(heading);
+        NoteEntity NoteToUpdate = NoteRepo.findByHeading(heading);
 
-        if(!NoteToUpdate.isEmpty())
+        if(NoteToUpdate != null)
         {
-            for(NoteEntity note : NoteToUpdate)
-            {
+                NoteEntity note = NoteToUpdate;
                 note.setHeading(headToUpdate);
                 note.setDescription(descriptionToUpdate);
                 NoteRepo.save(note);
-            }
-            return "Note updated : "+NoteToUpdate.size()+" Note : "+NoteToUpdate;
+
+            return "Note updated : "+note;
         }
         else{
             return "can't find that note";
         }
     }
+
+    @Override
+    public NoteEntity GetNoteByHead(String head) {
+        return NoteRepo.findByHeading(head);
+    }
+
+
 }
