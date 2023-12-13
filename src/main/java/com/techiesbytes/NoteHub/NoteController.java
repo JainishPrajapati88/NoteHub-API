@@ -1,5 +1,6 @@
 package com.techiesbytes.NoteHub;
 
+import com.techiesbytes.NoteHub.exceptions.NoteNotFound;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,8 +33,7 @@ public class NoteController {
     }
 
     @GetMapping(path = "/GetByHead/{head}")
-    public NoteEntity GetNoteByHead(@PathVariable("head") String head)
-    {
+    public NoteEntity GetNoteByHead(@PathVariable("head") String head) throws NoteNotFound {
         LOGGER.info("In get not by heading route");
         return NoteServ.GetNoteByHead(head);
     }

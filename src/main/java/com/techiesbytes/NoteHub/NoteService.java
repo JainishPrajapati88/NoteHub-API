@@ -1,5 +1,7 @@
 package com.techiesbytes.NoteHub;
 
+import com.techiesbytes.NoteHub.exceptions.NoteNotFound;
+
 import java.util.List;
 
 public interface NoteService {
@@ -13,5 +15,5 @@ public interface NoteService {
     public String UpdateNote(String heading, String headToUpdate, String descriptionToUpdate);
 
 
-    public NoteEntity GetNoteByHead(String head);
+    public NoteEntity GetNoteByHead(String head) throws NoteNotFound;
 }

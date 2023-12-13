@@ -1,6 +1,9 @@
 package com.techiesbytes.NoteHub;
 
 import java.util.List;
+import java.util.Optional;
+
+import com.techiesbytes.NoteHub.exceptions.NoteNotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,8 +58,14 @@ public class NoteServiceImpl implements NoteService{
     }
 
     @Override
-    public NoteEntity GetNoteByHead(String head) {
-        return NoteRepo.findByHeading(head);
+    public NoteEntity GetNoteByHead(String head) throws NoteNotFound {
+        NoteEntity note = NoteRepo.findByHeading(head);
+        if(note == null)
+        {
+            throw new NoteNotFound("Note not found");
+        }else{
+            return note;
+        }
     }
 
 
