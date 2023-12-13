@@ -20,7 +20,7 @@ NoteHub is a self-hosted note-taking API powered by a Spring Boot (A Java Spring
 
 1. **/addNote**
     - **Method:** POST
-    - **Parameters:**
+    - **Parameters:** In JSON
         - `head`: Note heading (String)
         - `desc`: Note description (String)
     - **Description:** Adds a new note with provided heading and description to the database.
@@ -29,17 +29,23 @@ NoteHub is a self-hosted note-taking API powered by a Spring Boot (A Java Spring
     - **Method:** GET
     - **Description:** Retrieves all notes from the database in JSON format.
 
-3. **/updateNote**
+3. **/GetByHead**
+    - **Method:** GET
+    - **Parameters:** It will need below parameter in URL like /GetByHead/<heading>
+        - `heading`: Note heading (String)
+    - **Description:** Retrieves a particular note heading and description based on passed heading of note in URL.
+
+4. **/updateNote**
     - **Method:** PUT
-    - **Parameters:**
+    - **Parameters:** It will require below attributes as Query Parameter
         - `heading`: Note heading (String)
         - `headToUpdate`: New heading to be updated (String)
         - `descriptionToUpdate`: New description to be updated (String)
     - **Description:** Updates the description and heading of the note specified by old  heading.
 
-4. **/deleteNote**
+5. **/deleteNote**
     - **Method:** DELETE
-    - **Parameters:**
+    - **Parameters:** It will need below parameter in URL like /deleteNote/<heading>
         - `heading`: Note heading (String)
     - **Description:** Deletes the note specified by heading from the database.
 
