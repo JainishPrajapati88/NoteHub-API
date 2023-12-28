@@ -59,7 +59,7 @@ You can utilize this RESTful - API using any language like Java , Python , PHP ,
 
 ## Purpose
 
-NoteHub API is designed for individuals who value privacy and control over their note-taking applications. By enabling self-hosting on personal servers or home labs, NoteHub eliminates the Risk of data leaks etc.
+NoteHub API is designed for individuals who value privacy and control over their note-taking applications. By enabling self-hosting on personal servers or home labs, ensuring that important notes remain in the user's secure environment.
 
 ## Advantages of Spring Boot for APIs
 
