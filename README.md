@@ -1,7 +1,7 @@
 
 # NoteHub
 
-NoteHub is a self-hosted note-taking API powered by a Spring Boot (A Java Spring Framework). This API allows users to manage their notes in their individual environments, providing privacy and control over their data.
+NoteHub is a note-taking API powered by a Spring Boot (A Java Spring Framework). This API allows users to manage their notes in their individual environments, 
 
 ## Requirements
 
@@ -57,14 +57,3 @@ You can test the NoteHub API using tools like Postman, Insomnia, or Visual Studi
 
 You can utilize this RESTful - API using any language like Java , Python , PHP , NodeJs etc.
 
-## Purpose
-
-NoteHub API is designed for individuals who value privacy and control over their note-taking applications. By enabling self-hosting on personal servers or home labs, ensuring that important notes remain in the user's secure environment.
-
-## Advantages of Spring Boot for APIs
-
-Spring Boot offers several advantages for developing APIs, including:
-- Rapid development and deployment.
-- Convention over configuration approach for streamlined setup.
-- Robust support for building RESTful APIs with minimal boilerplate code.
-- Integration capabilities with various databases and tools, ensuring flexibility in development.
